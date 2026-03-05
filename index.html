@@ -8,25 +8,25 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
 <style>
   * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
-  body { background-color:#F5F5F5; color:#333; position:relative; }
+  body { background-color:#F0F2F5; color:#333; }
 
   /* Header fixo */
   header {
     position: fixed; top:0; left:0; width:100%;
-    background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:1000;
+    background:#fff; box-shadow:0 2px 8px rgba(0,0,0,0.1); z-index:1000;
   }
   header .container { max-width:1200px; margin:0 auto; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
-  header h1 { font-family:'Montserrat', sans-serif; color:#1F3A93; font-size:1.8rem; }
+  header h1 { font-family:'Montserrat', sans-serif; color:#1D4E89; font-size:1.8rem; }
   header h2 { font-size:1rem; color:#555; margin-left:10px; font-weight:400; }
   nav a { margin-left:20px; text-decoration:none; color:#333; font-weight:500; transition:color 0.3s; }
   nav a:hover { color:#FF6F3C; }
   .cta { background-color:#FF6F3C; color:#fff; padding:8px 15px; border-radius:5px; text-decoration:none; transition: background 0.3s; }
   .cta:hover { background-color:#e65a28; }
 
-  /* Banner */
+  /* Banner principal */
   .banner {
     margin-top:70px;
-    background: url('https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260') no-repeat center/cover;
+    background: url('images/banner.jpg') no-repeat center/cover;
     height:400px; display:flex; align-items:center; justify-content:center; text-align:center; color:white; position:relative;
   }
   .banner::after { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); }
@@ -34,37 +34,38 @@
   .banner-content h2 { font-size:2rem; margin-bottom:20px; }
   .banner-content a { font-size:1.1rem; }
 
-  /* Imagens laterais */
+  /* Imagens laterais fixas */
   .side-image-left, .side-image-right {
     position:fixed; top:150px; width:120px; opacity:0.5; z-index:0;
   }
-  .side-image-left { left:0; }
-  .side-image-right { right:0; }
+  .side-image-left { left:0; content:url('images/lateral-left.jpg'); }
+  .side-image-right { right:0; content:url('images/lateral-right.jpg'); }
   @media(max-width:900px){ .side-image-left, .side-image-right { display:none; } }
 
   /* Seções */
-  section { max-width:1200px; margin:40px auto; padding:0 20px; position:relative; z-index:1; }
-  h3 { font-family:'Montserrat', sans-serif; color:#1F3A93; margin-bottom:15px; }
+  section { max-width:1200px; margin:40px auto; padding:0 20px; }
+  h3 { font-family:'Montserrat', sans-serif; color:#1D4E89; margin-bottom:15px; }
+
+  /* Cards de serviços */
   .services { display:flex; flex-wrap:wrap; gap:20px; }
   .card { background:#fff; flex:1 1 calc(25% - 20px); padding:20px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s; }
   .card:hover { transform: translateY(-5px); }
-  .card img { width:100%; height:150px; object-fit:cover; border-radius:5px; margin-bottom:15px; }
+  .card img { width:100%; height:180px; object-fit:cover; border-radius:5px; margin-bottom:15px; }
   .card p { font-size:0.95rem; color:#555; margin-bottom:10px; }
   .card .card-buttons { display:flex; justify-content:center; gap:10px; margin-top:10px; }
   .card .card-buttons a { flex:1; padding:8px; border-radius:5px; text-decoration:none; color:#fff; background:#FF6F3C; transition:0.3s; }
   .card .card-buttons a:hover { background:#e65a28; font-weight:bold; }
 
-  /* Contato */
+  /* Formulário */
   .contact-form { display:flex; flex-direction:column; gap:15px; max-width:500px; margin:0 auto; }
   .contact-form input, .contact-form textarea { padding:10px; border-radius:5px; border:1px solid #ccc; width:100%; }
   .contact-form button { background-color:#FF6F3C; color:#fff; padding:10px; border:none; border-radius:5px; cursor:pointer; transition: background 0.3s; }
   .contact-form button:hover { background-color:#e65a28; }
 
   /* Rodapé */
-  footer { background:#1F3A93; color:#fff; padding:20px 0; text-align:center; font-size:0.9rem; }
+  footer { background:#1D4E89; color:#fff; padding:20px 0; text-align:center; font-size:0.9rem; }
   footer a { color:#FF6F3C; text-decoration:none; }
 
-  /* Responsivo */
   @media(max-width:900px){ .services { flex-direction:column; } }
   @media(max-width:600px){ header h1 { font-size:1.4rem; } header h2 { font-size:0.85rem; } .banner-content h2 { font-size:1.5rem; } }
 </style>
@@ -80,14 +81,15 @@
     <nav>
       <a href="#services">Serviços</a>
       <a href="#about">Quem Somos</a>
+      <a href="#testimonials">Depoimentos</a>
       <a href="#contact">Contato</a>
-      <a href="https://wa.me/5551993932009" class="cta">Contratar Diarista / Doméstica</a>
+      <a href="https://wa.me/5551993932009" class="cta">Contratar</a>
     </nav>
   </div>
 </header>
 
-<img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=150&w=150" class="side-image-left" alt="Diarista">
-<img src="https://pxhere.com/en/photo/1328123" class="side-image-right" alt="Profissional indústria">
+<img class="side-image-left" alt="Diarista">
+<img class="side-image-right" alt="Profissional indústria">
 
 <div class="banner">
   <div class="banner-content">
@@ -100,9 +102,8 @@
   <h3>Nossos Serviços</h3>
   <div class="services">
 
-    <!-- Diaristas -->
     <div class="card">
-      <img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=400&w=400" alt="Diaristas">
+      <img src="images/card-diarista.jpg" alt="Diaristas">
       <p>Diaristas, Domésticas e Babás</p>
       <div class="card-buttons">
         <a href="https://wa.me/5551993932009">WhatsApp</a>
@@ -110,9 +111,8 @@
       </div>
     </div>
 
-    <!-- Alvenaria -->
     <div class="card">
-      <img src="https://cdn.pixabay.com/photo/2017/02/01/16/45/construction-2036185_1280.jpg" alt="Alvenaria">
+      <img src="images/card-alvenaria.jpg" alt="Alvenaria">
       <p>Alvenaria, Reparos e Pintura</p>
       <div class="card-buttons">
         <a href="https://wa.me/5551993932009">WhatsApp</a>
@@ -120,9 +120,8 @@
       </div>
     </div>
 
-    <!-- Elétrica -->
     <div class="card">
-      <img src="https://pxhere.com/en/photo/1056726" alt="Elétrica">
+      <img src="images/card-eletrica.jpg" alt="Elétrica">
       <p>Elétrica Residencial e Industrial</p>
       <div class="card-buttons">
         <a href="https://wa.me/5551993932009">WhatsApp</a>
@@ -130,9 +129,8 @@
       </div>
     </div>
 
-    <!-- Indústria -->
     <div class="card">
-      <img src="https://pxhere.com/en/photo/1328123" alt="Indústria">
+      <img src="images/card-industria.jpg" alt="Indústria">
       <p>Profissionais para Indústria</p>
       <div class="card-buttons">
         <a href="https://wa.me/5551993932009">WhatsApp</a>
@@ -145,7 +143,13 @@
 
 <section id="about">
   <h3>Quem Somos</h3>
-  <p>O Grupo Martinelle - Gestão e Serviços - é especializado em intermediar e gerenciar profissionais qualificados para serviços residenciais e consultoria empresarial. Confiança e eficiência para você e sua empresa.</p>
+  <p>O Grupo Martinelle - Gestão e Serviços - é especializado em intermediar e gerenciar profissionais qualificados para serviços residenciais e consultoria empresarial. Nossa missão é facilitar sua rotina e conectar você aos melhores profissionais do mercado.</p>
+</section>
+
+<section id="testimonials">
+  <h3>Depoimentos</h3>
+  <p>"Excelente atendimento e profissionais muito qualificados!" – Cliente Satisfeito</p>
+  <p>"Contratei para minha residência e fiquei muito satisfeito com a rapidez e qualidade." – Cliente Satisfeito</p>
 </section>
 
 <section id="contact">
@@ -158,12 +162,8 @@
   </form>
 </section>
 
-<!-- Botão flutuante WhatsApp fixo no canto -->
-<a href="https://wa.me/55SEUNUMERO" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:15px;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.3);text-decoration:none;font-size:1.5rem;z-index:1000;">📱</a>
-
 <footer>
-  © 2026 Grupo Martinelle | Martinelle Gestão e Serviços | CNPJ: 65.490.678/0001-45 <br>
-  Telefone / WhatsApp / Email
+  © 2026 Grupo Martinelle | Martinelle Gestão e Serviços | CNPJ: 65.490.678/0001-45
 </footer>
 
 </body>
