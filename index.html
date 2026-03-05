@@ -1,216 +1,137 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grupo Martinelle - Gestão e Serviços</title>
-
-<!-- Meta description para SEO -->
-<meta name="description" content="Grupo Martinelle oferece profissionais confiáveis para serviços residenciais e empresariais. Diaristas, eletricistas, encanadores e mais.">
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+<title>Martinelle Gestão e Serviços</title>
+<meta name="description" content="O Grupo Martinelle oferece profissionais qualificados para serviços residenciais e consultoria empresarial. Agende agora!">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
 <style>
-body {
-  margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  padding-top: 50px; /* espaço para barra fixa */
-}
-header {
-  background-color: #111;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  position: relative;
-}
-header h1 { margin: 0; }
-header a.button-top {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  background: #ff9800;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-}
-section { padding: 40px 20px; max-width: 900px; margin: auto; }
-.hero { text-align: center; }
-.hero h2 { font-size: 28px; margin-bottom: 10px; }
-.hero a.button { background-color: #111; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; display: inline-block; margin-top: 15px; }
-.services, .comofunciona, .depoimentos { display: grid; grid-template-columns: 1fr; gap: 20px; }
-.card, .step, .depoimento { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: 0.3s; text-align: center; }
-.card:hover, .step:hover, .depoimento:hover { transform: translateY(-5px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-footer { background-color: #111; color: #fff; text-align: center; padding: 15px; margin-top: 40px; }
+  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif; }
+  body { background-color:#F5F5F5; color:#333; position:relative; }
 
-/* Barra de CTA fixa no topo */
-.top-cta {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #ff9800;
-  color: #fff;
-  padding: 12px 20px;
-  text-align: center;
-  font-weight: bold;
-  z-index: 9999;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  font-size: 16px;
-}
-.top-cta a {
-  background-color: #111;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.top-cta a:hover { transform: scale(1.1); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+  /* Header fixo */
+  header {
+    position: fixed; top:0; left:0; width:100%;
+    background-color: #FFFFFF; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:1000;
+  }
+  header .container { max-width:1200px; margin:0 auto; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
+  header h1 { font-family:'Montserrat', sans-serif; color:#1F3A93; font-size:1.8rem; }
+  header h2 { font-size:1rem; color:#555555; margin-left:10px; font-weight:400; }
+  nav a { margin-left:20px; text-decoration:none; color:#333; font-weight:500; transition: color 0.3s; }
+  nav a:hover { color:#FF6F3C; }
+  .cta { background-color:#FF6F3C; color:#fff; padding:8px 15px; border-radius:5px; text-decoration:none; transition: background 0.3s; }
+  .cta:hover { background-color:#e65a28; }
 
-/* Botões flutuantes */
-.whatsapp, .solicitar { position: fixed; right: 20px; z-index: 1000; }
-.whatsapp { bottom: 20px; }
-.solicitar { bottom: 80px; }
-.whatsapp a, .solicitar a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: #fff;
-  padding: 18px 25px;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: bold;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  animation: pulse 2s infinite;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-.whatsapp a:hover, .solicitar a:hover { transform: scale(1.1); box-shadow: 0 6px 16px rgba(0,0,0,0.4); }
-@keyframes pulse { 0%{transform:scale(1);}50%{transform:scale(1.08);}100%{transform:scale(1);} }
-/* Ícones animados */
-.whatsapp i, .solicitar i { display: inline-block; animation: swing 1.5s infinite; }
-@keyframes swing { 0%{rotate:0deg;}25%{rotate:10deg;}50%{rotate:0deg;}75%{rotate:-10deg;}100%{rotate:0deg;} }
-.whatsapp a { background-color: #25d366; }
-.solicitar a { background-color: #ff9800; }
+  /* Banner */
+  .banner { margin-top:70px; background: url('https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260') no-repeat center/cover; height:400px; display:flex; align-items:center; justify-content:center; text-align:center; color:white; position: relative; }
+  .banner::after { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); }
+  .banner-content { position:relative; z-index:1; max-width:800px; }
+  .banner-content h2 { font-size:2rem; margin-bottom:20px; }
+  .banner-content a { font-size:1.1rem; }
 
-/* Mobile adjustments */
-@media(max-width:700px){
-  body { padding-top: 60px; }
-  .services, .comofunciona, .depoimentos { grid-template-columns: 1fr; }
-  section { padding: 30px 15px; }
-  .hero h2 { font-size: 24px; }
-  .hero p, .card p, .step p, .depoimento p { font-size: 16px; line-height: 1.5; }
-  .whatsapp a, .solicitar a { padding: 20px 25px; font-size: 18px; }
-  .card, .step, .depoimento { box-shadow: 0 3px 10px rgba(0,0,0,0.15); }
-}
-@media(min-width:701px){ .services, .comofunciona, .depoimentos { grid-template-columns: repeat(3,1fr); } }
+  /* Imagens laterais */
+  .side-image-left, .side-image-right {
+    position:fixed; top:150px; width:120px; opacity:0.6; z-index:0;
+    transition: opacity 0.3s;
+  }
+  .side-image-left { left:0; }
+  .side-image-right { right:0; }
+  @media(max-width:900px){ .side-image-left, .side-image-right { display:none; } }
+
+  /* Seções */
+  section { max-width:1200px; margin:40px auto; padding:0 20px; position:relative; z-index:1; }
+  h3 { font-family:'Montserrat', sans-serif; color:#1F3A93; margin-bottom:15px; }
+  .services { display:flex; flex-wrap:wrap; gap:20px; }
+  .card { background:#fff; flex:1 1 calc(25% - 20px); padding:20px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s; }
+  .card:hover { transform: translateY(-5px); }
+  .card img { width:60px; margin-bottom:15px; }
+  .card p { font-size:0.95rem; color:#555; }
+
+  /* Contato */
+  .contact-form { display:flex; flex-direction:column; gap:15px; max-width:500px; margin:0 auto; }
+  .contact-form input, .contact-form textarea { padding:10px; border-radius:5px; border:1px solid #ccc; width:100%; }
+  .contact-form button { background-color:#FF6F3C; color:#fff; padding:10px; border:none; border-radius:5px; cursor:pointer; transition: background 0.3s; }
+  .contact-form button:hover { background-color:#e65a28; }
+
+  /* Rodapé */
+  footer { background:#1F3A93; color:#fff; padding:20px 0; text-align:center; font-size:0.9rem; }
+  footer a { color:#FF6F3C; text-decoration:none; }
+
+  /* Responsivo */
+  @media(max-width:900px){ .services { flex-direction:column; } }
+  @media(max-width:600px){ header h1 { font-size:1.4rem; } header h2 { font-size:0.85rem; } .banner-content h2 { font-size:1.5rem; } }
 </style>
 </head>
 <body>
 
-<!-- Barra de CTA fixa no topo -->
-<div class="top-cta">
-  Precisa de profissionais confiáveis?
-  <a href="https://wa.me/5551993932009" target="_blank">WhatsApp Agora</a>
-</div>
-
 <header>
-  <h1>Grupo Martinelle</h1>
-  <p>Gestão e Serviços</p>
-  <a href="mailto:contato@grupomartinelle.com.br" class="button-top">Solicitar Diarista</a>
+  <div class="container">
+    <div>
+      <h1>Martinelle</h1>
+      <h2>Gestão e Serviços</h2>
+    </div>
+    <nav>
+      <a href="#services">Serviços</a>
+      <a href="#about">Quem Somos</a>
+      <a href="#contact">Contato</a>
+      <a href="https://wa.me/55SEUNUMERO" class="cta">Agende agora</a>
+    </nav>
+  </div>
 </header>
 
-<section class="hero">
-  <h2>Os profissionais certos para cada necessidade</h2>
-  <p>Gestão, organização e intermediação de serviços residenciais e empresariais com responsabilidade e confiança.</p>
-  <a href="mailto:contato@grupomartinelle.com.br" class="button">Solicitar Atendimento</a>
-</section>
+<!-- Imagens laterais de profissionais -->
+<img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=150&w=150" class="side-image-left" alt="Profissional">
+<img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=150&w=150" class="side-image-right" alt="Profissional">
 
-<section>
-  <h2>Sobre Nós</h2>
-  <p>O Grupo Martinelle é especializado na gestão e intermediação de serviços para residências e empresas. Conectamos clientes a profissionais qualificados conforme cada necessidade, sempre prezando pela organização, responsabilidade e qualidade.</p>
-</section>
+<div class="banner">
+  <div class="banner-content">
+    <h2>Os profissionais certos para cada necessidade</h2>
+    <a href="https://wa.me/55SEUNUMERO" class="cta">Agende agora</a>
+  </div>
+</div>
 
-<section>
-  <h2>Nossos Serviços</h2>
+<section id="services">
+  <h3>Nossos Serviços</h3>
   <div class="services">
     <div class="card">
-      <h3><i class="fas fa-home"></i> Serviços Residenciais</h3>
-      <p>Diaristas, eletricistas, encanadores e outros profissionais para atender sua casa com segurança e organização.</p>
+      <img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=60&w=60" alt="Diaristas">
+      <p>Diaristas qualificadas para residências</p>
     </div>
     <div class="card">
-      <h3><i class="fas fa-building"></i> Serviços Empresariais</h3>
-      <p>Organização e intermediação de profissionais para empresas com eficiência e responsabilidade.</p>
+      <img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=60&w=60" alt="Eletricistas">
+      <p>Eletricistas especializados</p>
     </div>
     <div class="card">
-      <h3><i class="fas fa-users-cog"></i> Gestão e Coordenação</h3>
-      <p>Acompanhamento e organização das demandas contratadas, garantindo tranquilidade ao cliente.</p>
+      <img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=60&w=60" alt="Encanadores">
+      <p>Encanadores experientes</p>
+    </div>
+    <div class="card">
+      <img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=60&w=60" alt="Consultoria">
+      <p>Consultoria para empresas</p>
     </div>
   </div>
 </section>
 
-<section>
-  <h2>Como Funciona</h2>
-  <div class="comofunciona">
-    <div class="step">
-      <h3>1. Solicite</h3>
-      <p>Entre em contato via WhatsApp ou e-mail e escolha o serviço que precisa.</p>
-    </div>
-    <div class="step">
-      <h3>2. Confirmamos</h3>
-      <p>Verificamos disponibilidade e enviamos o profissional adequado.</p>
-    </div>
-    <div class="step">
-      <h3>3. Serviço Concluído</h3>
-      <p>O serviço é executado com qualidade, segurança e confiabilidade.</p>
-    </div>
-  </div>
+<section id="about">
+  <h3>Quem Somos</h3>
+  <p>O Grupo Martinelle – Martinelle Gestão e Serviços – é especializado em intermediar e gerenciar profissionais qualificados para serviços residenciais e consultoria empresarial. Confiança e eficiência para você e sua empresa.</p>
 </section>
 
-<section>
-  <h2>O que nossos clientes dizem</h2>
-  <div class="depoimentos">
-    <div class="depoimento">
-      <p>"O serviço foi rápido e organizado. Recomendo o Grupo Martinelle!"</p>
-      <strong>- Maria S., Porto Alegre</strong>
-    </div>
-    <div class="depoimento">
-      <p>"Contratei diarista e eletricista pela Martinelle. Profissionais excelentes!"</p>
-      <strong>- Carlos T., Canoas</strong>
-    </div>
-    <div class="depoimento">
-      <p>"Atendimento confiável e eficiente. Ficamos muito satisfeitos."</p>
-      <strong>- Juliana P., Charqueadas</strong>
-    </div>
-  </div>
+<section id="contact">
+  <h3>Contato</h3>
+  <form class="contact-form">
+    <input type="text" placeholder="Nome" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Mensagem" rows="5" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
 </section>
 
 <footer>
-  © 2026 Grupo Martinelle – Gestão e Serviços<br>
-  ✅ Profissionais qualificados | ✅ Atendimento seguro | ✅ Confiança garantida<br>
-  🔒 Site seguro | ✔ Garantia de serviços verificados
+  © 2026 Grupo Martinelle | Martinelle Gestão e Serviços | CNPJ: 65.490.678/0001-45 <br>
+  Telefone / WhatsApp / Email
 </footer>
-
-<!-- Botões flutuantes -->
-<div class="whatsapp">
-  <a href="https://wa.me/5551993932009" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-</div>
-<div class="solicitar">
-  <a href="mailto:contato@grupomartinelle.com.br"><i class="fas fa-envelope"></i> Solicitar Diarista</a>
-</div>
 
 </body>
 </html>
