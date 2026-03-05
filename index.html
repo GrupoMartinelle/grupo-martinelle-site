@@ -7,24 +7,28 @@
 <meta name="description" content="O Grupo Martinelle oferece profissionais qualificados para serviços residenciais e consultoria empresarial. Agende agora!">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; font-family: 'Roboto', sans-serif; }
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Roboto', sans-serif; }
   body { background-color:#F5F5F5; color:#333; position:relative; }
 
   /* Header fixo */
   header {
     position: fixed; top:0; left:0; width:100%;
-    background-color: #FFFFFF; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:1000;
+    background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:1000;
   }
   header .container { max-width:1200px; margin:0 auto; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
   header h1 { font-family:'Montserrat', sans-serif; color:#1F3A93; font-size:1.8rem; }
-  header h2 { font-size:1rem; color:#555555; margin-left:10px; font-weight:400; }
-  nav a { margin-left:20px; text-decoration:none; color:#333; font-weight:500; transition: color 0.3s; }
+  header h2 { font-size:1rem; color:#555; margin-left:10px; font-weight:400; }
+  nav a { margin-left:20px; text-decoration:none; color:#333; font-weight:500; transition:color 0.3s; }
   nav a:hover { color:#FF6F3C; }
   .cta { background-color:#FF6F3C; color:#fff; padding:8px 15px; border-radius:5px; text-decoration:none; transition: background 0.3s; }
   .cta:hover { background-color:#e65a28; }
 
   /* Banner */
-  .banner { margin-top:70px; background: url('https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260') no-repeat center/cover; height:400px; display:flex; align-items:center; justify-content:center; text-align:center; color:white; position: relative; }
+  .banner {
+    margin-top:70px;
+    background: url('images/banner.jpg') no-repeat center/cover;
+    height:400px; display:flex; align-items:center; justify-content:center; text-align:center; color:white; position:relative;
+  }
   .banner::after { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); }
   .banner-content { position:relative; z-index:1; max-width:800px; }
   .banner-content h2 { font-size:2rem; margin-bottom:20px; }
@@ -32,11 +36,10 @@
 
   /* Imagens laterais */
   .side-image-left, .side-image-right {
-    position:fixed; top:150px; width:120px; opacity:0.6; z-index:0;
-    transition: opacity 0.3s;
+    position:fixed; top:150px; width:120px; opacity:0.5; z-index:0;
   }
-  .side-image-left { left:0; }
-  .side-image-right { right:0; }
+  .side-image-left { left:0; content:url('images/lateral-left.jpg'); }
+  .side-image-right { right:0; content:url('images/lateral-right.jpg'); }
   @media(max-width:900px){ .side-image-left, .side-image-right { display:none; } }
 
   /* Seções */
@@ -45,7 +48,7 @@
   .services { display:flex; flex-wrap:wrap; gap:20px; }
   .card { background:#fff; flex:1 1 calc(25% - 20px); padding:20px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s; }
   .card:hover { transform: translateY(-5px); }
-  .card img { width:60px; margin-bottom:15px; }
+  .card img { width:60px; height:60px; margin-bottom:15px; object-fit:cover; border-radius:5px; }
   .card p { font-size:0.95rem; color:#555; }
 
   /* Contato */
@@ -75,19 +78,18 @@
       <a href="#services">Serviços</a>
       <a href="#about">Quem Somos</a>
       <a href="#contact">Contato</a>
-      <a href="https://wa.me/55SEUNUMERO" class="cta">Agende agora</a>
+      <a href="https://wa.me/55SEUNUMERO" class="cta">Contratar Diarista / Doméstica</a>
     </nav>
   </div>
 </header>
 
-<!-- Imagens laterais de profissionais -->
-<img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=150&w=150" class="side-image-left" alt="Profissional">
-<img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=150&w=150" class="side-image-right" alt="Profissional">
+<img class="side-image-left" alt="Diarista">
+<img class="side-image-right" alt="Profissional indústria">
 
 <div class="banner">
   <div class="banner-content">
     <h2>Os profissionais certos para cada necessidade</h2>
-    <a href="https://wa.me/55SEUNUMERO" class="cta">Agende agora</a>
+    <a href="https://wa.me/5551993932009" class="cta">Agende agora</a>
   </div>
 </div>
 
@@ -95,35 +97,36 @@
   <h3>Nossos Serviços</h3>
   <div class="services">
     <div class="card">
-      <img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=60&w=60" alt="Diaristas">
-      <p>Diaristas qualificadas para residências</p>
+      <img src="images/card-diarista.jpg" alt="Diaristas">
+      <p>Diaristas, Domésticas e Babás</p>
+      <a href="https://wa.me/55SEUNUMERO" class="cta">Contratar</a>
     </div>
     <div class="card">
-      <img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=60&w=60" alt="Eletricistas">
-      <p>Eletricistas especializados</p>
+      <img src="images/card-alvenaria.jpg" alt="Alvenaria">
+      <p>Alvenaria, Reparos e Pintura</p>
     </div>
     <div class="card">
-      <img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=60&w=60" alt="Encanadores">
-      <p>Encanadores experientes</p>
+      <img src="images/card-eletrica.jpg" alt="Elétrica">
+      <p>Elétrica Residencial e Industrial</p>
     </div>
     <div class="card">
-      <img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=60&w=60" alt="Consultoria">
-      <p>Consultoria para empresas</p>
+      <img src="images/card-industria.jpg" alt="Indústria">
+      <p>Profissionais para Indústria</p>
     </div>
   </div>
 </section>
 
 <section id="about">
   <h3>Quem Somos</h3>
-  <p>O Grupo Martinelle – Martinelle Gestão e Serviços – é especializado em intermediar e gerenciar profissionais qualificados para serviços residenciais e consultoria empresarial. Confiança e eficiência para você e sua empresa.</p>
+  <p>O Grupo Martinelle - Gestão e Serviços - é especializado em intermediar e gerenciar profissionais qualificados para serviços residenciais e consultoria empresarial. Confiança e eficiência para você e sua empresa.</p>
 </section>
 
 <section id="contact">
   <h3>Contato</h3>
-  <form class="contact-form">
-    <input type="text" placeholder="Nome" required>
-    <input type="email" placeholder="Email" required>
-    <textarea placeholder="Mensagem" rows="5" required></textarea>
+  <form class="contact-form" action="https://formspree.io/f/mnqldvzy" method="POST">
+    <input type="text" name="name" placeholder="Nome" required>
+    <input type="email" name="_replyto" placeholder="Email" required>
+    <textarea name="message" placeholder="Mensagem" rows="5" required></textarea>
     <button type="submit">Enviar</button>
   </form>
 </section>
