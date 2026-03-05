@@ -16,65 +16,56 @@ header {
   color: #fff;
   padding: 20px;
   text-align: center;
+  position: relative;
 }
-header h1 {
-  margin: 0;
-}
-section {
-  padding: 40px 20px;
-  max-width: 900px;
-  margin: auto;
-}
-.hero {
-  text-align: center;
-}
-.hero h2 {
-  font-size: 28px;
-}
-.services {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-.card {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-.button {
-  display: inline-block;
-  background-color: #000;
+header h1 { margin: 0; }
+header a.button-top {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: #ff9800;
   color: #fff;
-  padding: 12px 20px;
+  padding: 10px 15px;
   border-radius: 8px;
   text-decoration: none;
-  margin-top: 15px;
+  font-weight: bold;
 }
-footer {
-  background-color: #000;
+section { padding: 40px 20px; max-width: 900px; margin: auto; }
+.hero { text-align: center; }
+.hero h2 { font-size: 28px; margin-bottom: 10px; }
+.hero a.button { background-color: #000; color: #fff; padding: 12px 20px; border-radius: 8px; text-decoration: none; display: inline-block; margin-top: 15px; }
+.services { display: grid; grid-template-columns: 1fr; gap: 20px; }
+.card { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+footer { background-color: #000; color: #fff; text-align: center; padding: 15px; margin-top: 40px; }
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+.whatsapp a {
+  display: block;
+  background-color: #25d366;
   color: #fff;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
+  padding: 15px 20px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
 }
-@media(min-width: 700px){
-  .services {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+@media(min-width: 700px){ .services { grid-template-columns: repeat(3, 1fr); } }
 </style>
 </head>
-
 <body>
 
 <header>
   <h1>Grupo Martinelle</h1>
   <p>Gestão e Serviços</p>
+  <a href="mailto:contato@grupomartinelle.com.br" class="button-top">Solicitar diarista</a>
 </header>
 
 <section class="hero">
-  <h2>Os profissionais certos para cada necessidade.</h2>
+  <h2>Os profissionais certos para cada necessidade</h2>
   <p>Gestão, organização e intermediação de serviços residenciais e empresariais com responsabilidade e confiança.</p>
   <a href="mailto:contato@grupomartinelle.com.br" class="button">Solicitar Atendimento</a>
 </section>
@@ -105,6 +96,10 @@ footer {
 <footer>
   © 2026 Grupo Martinelle – Gestão e Serviços. Todos os direitos reservados.
 </footer>
+
+<div class="whatsapp">
+  <a href="https://wa.me/5599999999999" target="_blank">WhatsApp</a>
+</div>
 
 </body>
 </html>
