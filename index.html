@@ -26,7 +26,7 @@
   /* Banner */
   .banner {
     margin-top:70px;
-    background: url('images/banner.jpg') no-repeat center/cover;
+    background: url('https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260') no-repeat center/cover;
     height:400px; display:flex; align-items:center; justify-content:center; text-align:center; color:white; position:relative;
   }
   .banner::after { content:""; position:absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.4); }
@@ -38,8 +38,8 @@
   .side-image-left, .side-image-right {
     position:fixed; top:150px; width:120px; opacity:0.5; z-index:0;
   }
-  .side-image-left { left:0; content:url('images/lateral-left.jpg'); }
-  .side-image-right { right:0; content:url('images/lateral-right.jpg'); }
+  .side-image-left { left:0; }
+  .side-image-right { right:0; }
   @media(max-width:900px){ .side-image-left, .side-image-right { display:none; } }
 
   /* Seções */
@@ -48,8 +48,11 @@
   .services { display:flex; flex-wrap:wrap; gap:20px; }
   .card { background:#fff; flex:1 1 calc(25% - 20px); padding:20px; border-radius:10px; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center; transition: transform 0.3s; }
   .card:hover { transform: translateY(-5px); }
-  .card img { width:60px; height:60px; margin-bottom:15px; object-fit:cover; border-radius:5px; }
-  .card p { font-size:0.95rem; color:#555; }
+  .card img { width:100%; height:150px; object-fit:cover; border-radius:5px; margin-bottom:15px; }
+  .card p { font-size:0.95rem; color:#555; margin-bottom:10px; }
+  .card .card-buttons { display:flex; justify-content:center; gap:10px; margin-top:10px; }
+  .card .card-buttons a { flex:1; padding:8px; border-radius:5px; text-decoration:none; color:#fff; background:#FF6F3C; transition:0.3s; }
+  .card .card-buttons a:hover { background:#e65a28; font-weight:bold; }
 
   /* Contato */
   .contact-form { display:flex; flex-direction:column; gap:15px; max-width:500px; margin:0 auto; }
@@ -78,13 +81,13 @@
       <a href="#services">Serviços</a>
       <a href="#about">Quem Somos</a>
       <a href="#contact">Contato</a>
-      <a href="https://wa.me/55SEUNUMERO" class="cta">Contratar Diarista / Doméstica</a>
+      <a href="https://wa.me/5551993932009" class="cta">Contratar Diarista / Doméstica</a>
     </nav>
   </div>
 </header>
 
-<img class="side-image-left" alt="Diarista">
-<img class="side-image-right" alt="Profissional indústria">
+<img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=150&w=150" class="side-image-left" alt="Diarista">
+<img src="https://pxhere.com/en/photo/1328123" class="side-image-right" alt="Profissional indústria">
 
 <div class="banner">
   <div class="banner-content">
@@ -96,23 +99,47 @@
 <section id="services">
   <h3>Nossos Serviços</h3>
   <div class="services">
+
+    <!-- Diaristas -->
     <div class="card">
-      <img src="images/card-diarista.jpg" alt="Diaristas">
+      <img src="https://images.pexels.com/photos/4491452/pexels-photo-4491452.jpeg?auto=compress&cs=tinysrgb&h=400&w=400" alt="Diaristas">
       <p>Diaristas, Domésticas e Babás</p>
-      <a href="https://wa.me/55SEUNUMERO" class="cta">Contratar</a>
+      <div class="card-buttons">
+        <a href="https://wa.me/5551993932009">WhatsApp</a>
+        <a href="mailto:martinelle1580@gmail.com">Email</a>
+      </div>
     </div>
+
+    <!-- Alvenaria -->
     <div class="card">
-      <img src="images/card-alvenaria.jpg" alt="Alvenaria">
+      <img src="https://cdn.pixabay.com/photo/2017/02/01/16/45/construction-2036185_1280.jpg" alt="Alvenaria">
       <p>Alvenaria, Reparos e Pintura</p>
+      <div class="card-buttons">
+        <a href="https://wa.me/5551993932009">WhatsApp</a>
+        <a href="mailto:martinelle1580@gmail.com">Email</a>
+      </div>
     </div>
+
+    <!-- Elétrica -->
     <div class="card">
-      <img src="images/card-eletrica.jpg" alt="Elétrica">
+      <img src="https://pxhere.com/en/photo/1056726" alt="Elétrica">
       <p>Elétrica Residencial e Industrial</p>
+      <div class="card-buttons">
+        <a href="https://wa.me/5551993932009">WhatsApp</a>
+        <a href="mailto:martinelle1580@gmail.com">Email</a>
+      </div>
     </div>
+
+    <!-- Indústria -->
     <div class="card">
-      <img src="images/card-industria.jpg" alt="Indústria">
+      <img src="https://pxhere.com/en/photo/1328123" alt="Indústria">
       <p>Profissionais para Indústria</p>
+      <div class="card-buttons">
+        <a href="https://wa.me/5551993932009">WhatsApp</a>
+        <a href="mailto:martinelle1580@gmail.com">Email</a>
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -130,6 +157,9 @@
     <button type="submit">Enviar</button>
   </form>
 </section>
+
+<!-- Botão flutuante WhatsApp fixo no canto -->
+<a href="https://wa.me/55SEUNUMERO" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:15px;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,0.3);text-decoration:none;font-size:1.5rem;z-index:1000;">📱</a>
 
 <footer>
   © 2026 Grupo Martinelle | Martinelle Gestão e Serviços | CNPJ: 65.490.678/0001-45 <br>
